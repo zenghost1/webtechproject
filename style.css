@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=League+Spartan&display=swap');
+
+
 *{
   margin: 0;
   padding: 0;
@@ -58,8 +60,11 @@ p{
 
 #navbar li{
   list-style: none;
+  display: inline-block;
   padding: 0 20px;
   position: relative;
+  cursor: pointer;
+  z-index: 2;
 }
 
 #navbar li a{
@@ -67,7 +72,7 @@ p{
   font-size: 16px;
   font-weight: 600;
   color: #1a1a1a;
-  transition: 0.3s ease;
+  transition: color 0.5s ease;
 }
 
 #navbar li a:hover,#navbar li a.active{
@@ -84,6 +89,25 @@ p{
   left: 20px;
   transition: 0.3s ease;
 }
+
+/* #navbar li::after{
+  content: '';
+  background: #f44566;
+  width: 100%;
+  height: 100%;
+  border-radius: 30px;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  opacity: 0;
+}
+
+#navbar li:hover::after{
+  top: 50%;
+  opacity: 1;
+} */
 
 #hero{
   background-image: url(/img/hero4.png);
@@ -132,7 +156,7 @@ p{
   border-radius: 5px;
   margin: 15px 0;
 }
-#feature .fe-box:hover{
+/* #feature .fe-box:hover{
   box-shadow: 10px 10px 50px rgba(70,620,221,0.1);
 }
 #feature .fe-box img{
@@ -161,6 +185,98 @@ p{
 }
 #feature .fe-box:nth-child(6) h6{
   background-color: #fff2e5;
+} */
+
+.container{
+	position: relative;
+	width: 200px;
+  height: 300px;
+	margin: 100px auto 0 auto;
+	perspective: 1000px;
+}
+.carousel{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	transform-style: preserve-3d;
+	animation: rotate360 18s infinite forwards linear;
+}
+
+@keyframes rotate360 {
+	from{
+		transform: rotateY(0deg);
+	}
+	to{
+		transform: rotateY(-360deg);
+	}
+}
+
+#feature{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+#feature .fe-box{
+  width: 150px;
+  height: 150px;
+  text-align: center;
+  padding: 25px 15px;
+  box-shadow: 20px 20px 40px rgba(0,0,0,0.03);
+  border: 1px solid #cce7d0;
+  border-radius: 5px;
+  margin: 15px 0;
+  display: flex;
+  justify-content: space-evenly;
+  position: absolute;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#feature .fe-box img{
+  width: 100%;
+  margin-bottom: 10px;
+}
+#feature .fe-box h6{
+  display: inline-block;
+  margin: -10px auto;
+  line-height: 0.8;
+  text-align: center;
+  border-radius: 5px;
+  color: #088178;
+}
+#feature .fe-box:nth-child(1){
+  background-image: url("/img/features/f1.png");
+  transform: rotateY(0deg) translateZ(430px);
+}
+#feature .fe-box:nth-child(2){
+  background-image: url("/img/features/f2.png");
+  transform: rotateY(51.42deg) translateZ(430px);
+}
+#feature .fe-box:nth-child(3){
+  background-color: #d1e8f2;
+  background-image: url("/img/features/f3.png");
+  transform: rotateY(102.84deg) translateZ(430px);
+}
+#feature .fe-box:nth-child(4){
+  background-color: #cdd4f8;
+  background-image: url("/img/features/f4.png");
+  transform: rotateY(153.26deg) translateZ(430px);
+}
+#feature .fe-box:nth-child(5){
+  background-color: #f6dbf6;
+  background-image: url("/img/features/f5.png");
+  transform: rotateY(204.88deg) translateZ(430px);
+}
+#feature .fe-box:nth-child(6){
+  background-image: url("/img/features/f6.png");
+  transform: rotateY(256.3deg) translateZ(430px);
+}
+#feature .fe-box:nth-child(7){
+  background-image: url("/img/features/f7.jpeg");
+  transform: rotateY(307.72deg) translateZ(430px);
 }
 
 
